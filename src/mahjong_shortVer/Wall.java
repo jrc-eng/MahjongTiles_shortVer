@@ -7,6 +7,7 @@ package mahjong_shortVer;
 
 import java.util.ArrayList;
 import java.lang.Exception;
+import java.util.Random;
 /**
  * Wall
  * 
@@ -89,9 +90,40 @@ public class Wall {
                     wall.add(new Tile(suit, r));
                 }
             }
-            
         }
         
+        shuffle();
+        
+    }
+    
+    public void shuffle()
+    {
+        
+        if(wall.isEmpty())
+        {
+            return;
+        }
+        
+        int swapTimes = wall.size();
+        
+        int randomNum = 0;
+        
+        Random random = new Random();
+        
+        for (int x = 0 ; x < swapTimes ; x++)
+        {
+            randomNum = Math.abs(random.nextInt() % swapTimes);
+            
+            System.out.println(randomNum);
+            
+            Tile c = wall.remove(randomNum);
+            
+            //We then add it to the front of the deck, and we do this for all the other numbers.
+            wall.add(0, c);
+            
+            
+            
+        }
     }
     
     public boolean isEmpty()
