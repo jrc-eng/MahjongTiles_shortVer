@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mahjong_shortVer;
+package mahjong_136;
 
 import java.util.ArrayList;
 import java.lang.Exception;
@@ -92,7 +92,32 @@ public class Wall {
             }
         }
         
+        //At this stage, we are done adding simples.
+        //Now... we add the royals into the mix.
+        
+        addCountToWall(new Tile(TileSuit.DRAGON_RED, 0), 4);
+        addCountToWall(new Tile(TileSuit.DRAGON_GRN, 0), 4);
+        addCountToWall(new Tile(TileSuit.DRAGON_WHT, 0), 4);
+        addCountToWall(new Tile(TileSuit.EAST, 0), 4);
+        addCountToWall(new Tile(TileSuit.WEST, 0), 4);
+        addCountToWall(new Tile(TileSuit.SOUTH, 0), 4);
+        addCountToWall(new Tile(TileSuit.NORTH, 0), 4);
+             
         shuffle();
+        
+    }
+    
+    private void addCountToWall(Tile t, int count)
+    {
+        if(count <= 0)
+        {
+            return;
+        }
+        
+        for (int x = 0 ; x < count ; x++)
+        {
+            wall.add(t);
+        }
         
     }
     

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mahjong_shortVer;
+package mahjong_136;
 
 /**
  * Tile
@@ -42,6 +42,30 @@ public class Tile {
     public void setSuit(TileSuit s)
     {
         suit = s;
+    }
+    
+    /**
+     * isSimple()
+     * 
+     * BAMs, PANs, and CHARAs are simple tiles.
+     * 
+     * @return 
+     */
+    public boolean isSimple()
+    {
+        return (suit == TileSuit.BAM || suit == TileSuit.PAN || suit == TileSuit.CHARA);
+    }
+    
+    /**
+     * isRoyal()
+     * 
+     * If the tile is NOT a suited tile with rank, it is a Royal Tile.
+     * 
+     * @return 
+     */
+    public boolean isRoyal()
+    {
+        return !(suit == TileSuit.BAM || suit == TileSuit.PAN || suit == TileSuit.CHARA);
     }
     
     
