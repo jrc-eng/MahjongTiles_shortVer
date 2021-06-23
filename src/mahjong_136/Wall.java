@@ -139,8 +139,6 @@ public class Wall {
         {
             randomNum = Math.abs(random.nextInt() % swapTimes);
             
-            System.out.println(randomNum);
-            
             Tile c = wall.remove(randomNum);
             
             //We then add it to the front of the deck, and we do this for all the other numbers.
@@ -156,4 +154,14 @@ public class Wall {
         return wall.isEmpty();
     }
     
+    
+    public Tile draw()
+    {
+        return wall.remove(0);
+    }
+    
+    public void replace(Tile t)
+    {
+        wall.add(t);
+    }
 }

@@ -68,5 +68,63 @@ public class Tile {
         return !(suit == TileSuit.BAM || suit == TileSuit.PAN || suit == TileSuit.CHARA);
     }
     
+    /**
+     * toString()
+     * 
+     * A toString method for getting a string value for a Tile.
+     * 
+     * 
+     * @return 
+     */
+    public String toString()
+    {
+        String suitString = "";
+        
+        String rankString = "";
+        
+        switch(suit)
+        {
+            case PAN:
+                suitString = "PAN";
+                break;
+             case BAM:
+                suitString = "BAM";
+                break;                      
+            case CHARA:
+                suitString = "CRAK";
+                break;            
+             case DRAGON_RED:
+                suitString = "Red";
+                break;
+            case DRAGON_GRN:
+                suitString = "Green";
+                break;
+            case DRAGON_WHT:
+                suitString = "White";
+                break;
+            case EAST:
+                suitString = "East";
+                break;
+                               
+            case NORTH:
+                suitString = "North";
+                break;
+            case WEST:
+                suitString = "West";
+                break;
+            case SOUTH:
+                suitString = "South";
+                break;
+        }
+        
+        if(isSimple())
+        {
+            rankString = rank + "";
+        }
+        
+        return rankString + suitString;
+        
+    }
+    
     
 }

@@ -5,6 +5,7 @@
  */
 package testMain;
 
+import mahjong_136.Tile;
 import mahjong_136.Wall;
 
 /**
@@ -19,9 +20,9 @@ public class Main {
         Wall w = new Wall();
         
         
+        Tile t = w.draw();
         
-        
-        
+        System.out.println(t);
         
         
         
